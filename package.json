@@ -1,0 +1,26 @@
+{
+  "name": "burger-app",
+  "version": "1.0.0",
+  "description": "A burger eating app that tracks burgers you want against burgers you have eaten.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msedlazek/burger-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/msedlazek/burger-app/issues"
+  },
+  "homepage": "https://github.com/msedlazek/burger-app#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.7",
+    "mysql": "^2.13.0"
+  }
+}
