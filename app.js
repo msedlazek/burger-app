@@ -21,8 +21,9 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
-var catsController = require("./controllers/burgers-controller.js");
+var burgersController = require("./controllers/burger-controller.js");
 
+// May not need to designate a sub route. just use / and link to index.
 app.use("/burgers", burgersController);
 
 app.listen(port);

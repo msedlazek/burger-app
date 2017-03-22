@@ -1,24 +1,42 @@
-// Import the ORM to create functions that will interact with the database.
-var orm = require("../config/orm.js");
+var express = require("express");
 
-var burger = {
-  all: function(cb) {
-    orm.all("burgers", function(res) {
-      cb(res);
-    });
-  },
-  // The variables cols and vals are arrays.
-  create: function(cols, vals, cb) {
-    orm.create("burgers", cols, vals, function(res) {
-      cb(res);
-    });
-  },
-  update: function(objColVals, condition, cb) {
-    orm.update("burgers", objColVals, condition, function(res) {
-      cb(res);
-    });
-  }
-};
+var router = express.Router();
 
-// Export the database functions for the controller (catsController.js).
-module.exports = burger;
+// Import the model (cat.js) to use its database functions.
+var burger = require("../models/burger.js");
+
+// Create all our routes and set up logic within those routes where required.
+router.get("/", function(req, res) {
+  burger.all(function(data) {
+    var hbsObject = {
+      burgers: data
+    };
+    console.log(hbsObject);
+    res.render("main", hbsObject);  
+  });
+});
+
+router.post("/", function(req, res) {
+  burger.create([
+    "name"
+  ], [
+    req.body.name
+  ], function() {
+    res.redirect("/");
+  });
+});
+
+router.put("/:id", function(req, res) {
+  var condition = "id = " + req.params.id;
+
+  console.log("condition", condition);
+
+  burger.update({
+    devoured: req.body.devoured
+  }, condition, function() {
+    res.redirect("/burgers");
+  });
+});
+
+// Export routes for server.js to use.
+module.exports = router;
