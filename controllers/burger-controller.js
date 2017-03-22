@@ -16,13 +16,13 @@ router.get("/", function(req, res) {
   });
 });
 
-router.post("/", function(req, res) {
+router.post("/create", function(req, res) {
   burger.create([
     "name"
   ], [
     req.body.name
   ], function() {
-    res.redirect("/");
+    res.redirect("/burgers");
   });
 });
 
