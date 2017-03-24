@@ -1,0 +1,25 @@
+body {
+	background-color: orange;
+	margin: 30px;
+}
+
+label {
+	font-size: 20px;
+}
+
+div {
+	width: 33%;
+	float: left;
+}
+
+h1 {
+	font-size: 45px;
+}
+
+h2 {
+	font-size: 40px;
+}
+/*.burgerList, .eatenList {
+	width: 50%;
+	float: left;
+}*/
