@@ -2,9 +2,9 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
 
-var port = 3000;
+// var port = 3000;
 
-var app = express();
+var app = modules.exports = express();
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static(process.cwd() + "/public"));
@@ -26,4 +26,4 @@ var burgersController = require("./controllers/burger-controller.js");
 // May not need to designate a sub route. just use / and link to index.
 app.use("/burgers", burgersController);
 
-app.listen(port);
+// app.listen(port);

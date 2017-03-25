@@ -2,7 +2,7 @@
   "name": "burger-app",
   "version": "1.0.0",
   "description": "A burger eating app that tracks burgers you want against burgers you have eaten.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
